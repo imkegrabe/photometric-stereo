@@ -57,4 +57,21 @@ n3.dtype
 z = unbiased_integrate(n1, n2, n3, beethoven_mat_mask, order = 2)
 
 #display the 3D shape
-display_depth_mayavi(z)
+#display_depth_mayavi(z)
+
+
+#beethoven_mat = read_data_file('Beethoven.mat')
+buddha = loadmat('Buddha.mat')
+
+#3D array I of size (m,n,k) where (m,n) is the size of each image and k is the number of views
+buddha_I = buddha['I']
+
+#2D binary array mask of size (m, n). Only pixels with values 1 should be used for Photometric stereo
+buddha_mask = buddha['mask']
+
+#an array S of light vectors, of size (k, 3), where line i represents the directional light Si that was used to obtain image I(:,:,i).
+buddha_S = buddha['S']
+
+determinant_list = create_sorted_determinant_list(buddha_S)
+determinant_list = sorted(determinant_list, key=lambda element: element['determinant'])
+print(determinant_list)

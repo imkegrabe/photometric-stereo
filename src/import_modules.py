@@ -1,5 +1,4 @@
 # Python modules
-from ps_utils import *
 import scipy.io as sio
 import numpy as np
 import matplotlib 
@@ -10,4 +9,7 @@ import scipy.sparse as sp
 from scipy.sparse.linalg import spsolve
 from scipy.io import loadmat
 from sys import version_info
+from itertools import combinations
 
+from ps_utils import *
+from photometric_stereo_functions import *
