@@ -32,8 +32,8 @@ if version_info >= (3,0):
     
 
 # to use matplotlib or mayavi, uncomment/comment correspondingly
-BCKEND3D = 'matplotlib'
-#BCKEND3D = 'mayavi'
+#BCKEND3D = 'matplotlib'
+BCKEND3D = 'mayavi'
 
 
 
