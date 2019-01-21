@@ -40,8 +40,10 @@ albedo_image = np.zeros(beethoven_mat_mask.shape)
 #fill it out according to the mask
 albedo_image[np.where(beethoven_mat_mask)] = albedo
 
-#normalize M
-n = (1/albedo)*M 
+n = (1/albedo)*M #normal M is the field of all the normals
+plt.imshow(n[0], cmap='gray')
+plt.show(block=False)
+input('press <ENTER> to continue')
 
 #split up into 3 pictures and fill out according to mask
 n1 = np.zeros((beethoven_mat_mask.shape))
@@ -74,4 +76,10 @@ buddha_S = buddha['S']
 
 determinant_list = create_sorted_determinant_list(buddha_S)
 determinant_list = sorted(determinant_list, key=lambda element: element['determinant'])
+
 print(determinant_list)
+
+plt.imshow(z, cmap='gray')
+plt.show(block=False)
+input('press <ENTER> to continue')
+#display_depth_mayavi(z)
